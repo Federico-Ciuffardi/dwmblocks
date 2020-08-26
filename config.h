@@ -2,12 +2,14 @@
 
 static const Block blocks[] = {
 	/*Icon |	Comman                       | Update Interva |	Update Signal */
-	{""    , "$STATUSBAR_BIN/pacpackages"     , 0              , 3},
-	{""    , "$STATUSBAR_BIN/news"            , 0              , 4},
-	{""    , "$STATUSBAR_BIN/coronavirus"     , 3600*12        , 11},
+	{""    , "$STATUSBAR_BIN/cpu"             , 0              , 14},
+	{""    , "$STATUSBAR_BIN/memory"          , 0              , 13},
+	{""    , "$STATUSBAR_BIN/disk"            , 0              , 18},
+	{""    , "$STATUSBAR_BIN/battery"         , 0              , 15},
 	{""    , "$STATUSBAR_BIN/weather"         , 3600*12        , 10},
-	{""    , "$STATUSBAR_BIN/disk /"          , 0              , 12},
-	{""    , "$STATUSBAR_BIN/battery"         , 0              , 12},
+	{""    , "$STATUSBAR_BIN/coronavirus"     , 3600*12        , 11},
+	{""    , "$STATUSBAR_BIN/news"            , 0              , 4},
+	{""    , "$STATUSBAR_BIN/pacpackages"     , 0              , 3},
 	{""    , "$STATUSBAR_BIN/volume"          , 0              , 2},
 	{""    , "$STATUSBAR_BIN/clock"           , 2              , 1},
 };

@@ -2,10 +2,10 @@
 
 static const Block blocks[] = {
 	/*Icon |	Comman                       | Update Interva |	Update Signal */
-	{""    , "$STATUSBAR_BIN/cpu"             , 0              , 14},
-	{""    , "$STATUSBAR_BIN/memory"          , 0              , 13},
-	{""    , "$STATUSBAR_BIN/disk"            , 0              , 18},
-	{""    , "$STATUSBAR_BIN/battery"         , 0              , 15},
+	{""    , "$STATUSBAR_BIN/cpu"             , 2              , 14},
+	{""    , "$STATUSBAR_BIN/memory"          , 10             , 13},
+	{""    , "$STATUSBAR_BIN/disk /"          , 30             , 18},
+	{""    , "$STATUSBAR_BIN/battery"         , 30             , 15},
 	{""    , "$STATUSBAR_BIN/weather"         , 3600*12        , 10},
 	{""    , "$STATUSBAR_BIN/coronavirus"     , 3600*12        , 11},
 	{""    , "$STATUSBAR_BIN/news"            , 0              , 4},

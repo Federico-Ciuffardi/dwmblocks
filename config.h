@@ -7,7 +7,7 @@ static const Block blocks[] = {
 	{""    , "$STATUSBAR_BIN/sb-membars"      , 1              , 13 },
 	{""    , "$STATUSBAR_BIN/disk /"          , 30             , 18 },
 	/* {""    , "$STATUSBAR_BIN/tmux"         , 0              , 20 }, */
-	{""    , "$STATUSBAR_BIN/sb-nettraf"      , 1              , 16 },
+	/* {""    , "$STATUSBAR_BIN/sb-nettraf"      , 1              , 16 }, */
 	{""    , "$STATUSBAR_BIN/weather"         , 3600*1         , 10 },
 	/* {""    , "$STATUSBAR_BIN/coronavirus"  , 3600*12        , 11 }, */
 	/* {""    , "$STATUSBAR_BIN/news"         , 0              , 4  }, */

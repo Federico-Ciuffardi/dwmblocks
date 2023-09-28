@@ -41,7 +41,7 @@ void execBlock(const Block *block, const char *button) {
         pclose(file);
 
         // Trim to the max possible UTF-8 capacity
-        trimUTF8(buffer, LEN(buffer));
+        /* trimUTF8(buffer, LEN(buffer)); */
 
         printf("%s\n", buffer);
         exit(EXIT_SUCCESS);

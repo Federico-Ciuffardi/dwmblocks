@@ -4,16 +4,16 @@
 #include "util.h"
 
 Block blocks[] = {
-    {"sb-mail",    600,  1 },
-    {"sb-music",   0,    2 },
-    {"sb-disk",    1800, 3 },
-    {"sb-memory",  10,   4 },
-    {"sb-loadavg", 5,    5 },
-    {"sb-mic",     0,    6 },
-    {"sb-record",  0,    7 },
-    {"sb-volume",  0,    8 },
-    {"sb-battery", 5,    9 },
-    {"sb-date",    1,    10},
+    /* Command                    | Update Interval  | Update Signal */
+    {"$STATUSBAR_BIN/sb-cpubars"  , 1                , 14            },
+    {"$STATUSBAR_BIN/sb-membars"  , 1                , 13            },
+    {"$STATUSBAR_BIN/disk /"      , 30               , 18            },
+    {"$STATUSBAR_BIN/weather"     , 60*60            , 10            },
+    {"$STATUSBAR_BIN/sb-mailbox"  , 60*10            , 17            },
+    {"$STATUSBAR_BIN/pacpackages" , 60*60            , 3             },
+    {"$STATUSBAR_BIN/battery"     , 30               , 15            },
+    {"$STATUSBAR_BIN/volume"      , 0                , 2             },
+    {"$STATUSBAR_BIN/clock"       , 30               , 1             },
 };
 
 const unsigned short blockCount = LEN(blocks);

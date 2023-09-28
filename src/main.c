@@ -20,18 +20,17 @@ void signalHandler() {
     read(signalFD, &info, sizeof(info));
 
     unsigned int block_signal = info.ssi_int >> 8;
+    unsigned int signal = info.ssi_signo;
 
     for (int j = 0; j < blockCount; j++) {
         const Block *block = blocks + j;
-        if (block->signal == block_signal) {
+        if (block->signal == block_signal || block->signal == signal - SIGRTMIN) {
             char button[4];  // value can't be more than 255;
             sprintf(button, "%d", info.ssi_int & 0xff);
             execBlock(block, button);
             return;
         }
     }
-
-    unsigned int signal = info.ssi_signo;
 
     static unsigned int timer = 0;
     switch (signal) {

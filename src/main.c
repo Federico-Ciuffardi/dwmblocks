@@ -18,6 +18,19 @@ static unsigned int timerTick = 0, maxInterval = 1;
 void signalHandler() {
     struct signalfd_siginfo info;
     read(signalFD, &info, sizeof(info));
+
+    unsigned int block_signal = info.ssi_int >> 8;
+
+    for (int j = 0; j < blockCount; j++) {
+        const Block *block = blocks + j;
+        if (block->signal == block_signal) {
+            char button[4];  // value can't be more than 255;
+            sprintf(button, "%d", info.ssi_int & 0xff);
+            execBlock(block, button);
+            return;
+        }
+    }
+
     unsigned int signal = info.ssi_signo;
 
     static unsigned int timer = 0;
@@ -29,21 +42,11 @@ void signalHandler() {
 
             // Wrap `timer` to the interval [1, `maxInterval`]
             timer = (timer + timerTick - 1) % maxInterval + 1;
-            return;
+            break;
         case SIGUSR1:
             // Update all blocks on receiving SIGUSR1
             execBlocks(0);
-            return;
-    }
-
-    for (int j = 0; j < blockCount; j++) {
-        const Block *block = blocks + j;
-        if (block->signal == signal - SIGRTMIN) {
-            char button[4];  // value can't be more than 255;
-            sprintf(button, "%d", info.ssi_int & 0xff);
-            execBlock(block, button);
             break;
-        }
     }
 }
 
